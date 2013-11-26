@@ -1,9 +1,3 @@
-$( document ).ready(function() {
-  app.populateReferer();
-  app.browserDetect.init();
-  app.populateBrowser();
-});
-
 var app = {
 
   populateReferer: function(){
@@ -15,9 +9,24 @@ var app = {
     $('#browserVersion').html(app.browserDetect.version);
   },
 
+  determineRedirect: function(){
+    window.location.replace("/" + this.getLanguage() + "/?referer=" + this.getReferer() );
+  },
+
+  getLanguage: function(){
+    return window.navigator.userLanguage || window.navigator.language;
+  },
+
+  timeoutRedirectToEnglish: function(){
+    setTimeout(function(){
+      window.location.replace("/en-US/?referer=" + this.getReferer() );
+    }, 5 * 1000);
+  },
+
   getReferer: function(){
-    if(this.getUrlVars()['referer'] != null){
-      return this.getUrlVars()['referer'];
+    var referer = this.getUrlVars()['referer']
+    if(referer != null && referer != 'undefined'){
+      return referer;
     }else if(document.referrer != null){
       return document.referrer.split('/')[2];
     }else{
