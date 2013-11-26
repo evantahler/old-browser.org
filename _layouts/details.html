@@ -1,0 +1,72 @@
+---
+layout: default
+---
+
+<div class="header">
+  <h1 class="text-muted">Old-Browser.org</h1>
+</div>
+
+<div class="jumbotron">
+  <h1>{{ page.main_heading }}</h1>
+  <h2>{{ page.secondary_heading }}</h2>
+  <p>{{ page.heading_details }}</p>
+  <p>{{ page.dont_worry }}</p>
+</div>
+
+<div class="row marketing">
+  <div class="col-md-12">
+
+    <div align="center" class="col-md-3 col-sm-3">
+      <h4>{{ page.google_chrome }}</h4>
+      <p>{{ page.all_operating_systems }}</p>
+      <p><a href="http://www.google.com/chrome"><img width="200" src="/img/chrome.jpeg" /></a></p>
+    </div>
+
+    <div align="center" class="col-md-3 col-sm-3">
+      <h4>Mozilla Firefox</h4>
+      <p>{{ page.all_operating_systems }}</p>
+      <p><a href="http://www.mozilla.org/firefox"><img width="200" src="/img/firefox.jpeg" /></a></p>
+    </div>
+
+    <div align="center" class="col-md-3 col-sm-3">
+      <h4>Apple Safari</h4>
+      <p>{{ page.all_operating_systems }}</p>
+      <p><a href="http://www.apple.com/safari"><img width="200" src="/img/safari.jpeg" /></a></p>
+    </div>
+
+    <div align="center" class="col-md-3 col-sm-3">
+      <h4>Explorer</h4>
+      <p>{{ page.windows_operating_system }}</p>
+      <p><a href="http://windows.microsoft.com/en-us/internet-explorer/download-ie"><img width="200" src="/img/ie.jpeg" /></a></p>
+    </div>
+
+  </div>
+</div>
+
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+
+<div class="panel panel-info">
+  <div class="panel-heading">{{ page.more_details_header }}</div>
+  <div class="panel-body">{{ page.more_details_body }}
+    <p>&nbsp;</p>
+    <p>{{ page.more_details_final }}</p>
+    <p>{{ page.browser_details }}</p>
+  </div>
+</div>
+
+<div class="footer">
+  <p>&copy; Old-Browser.org was built by <a href="http://twitter.com/evantahler">@evantahler</a> as a public service</p>
+</div>
+
+<script type="text/javascript">
+
+  $( document ).ready(function() {
+    app.populateReferer();
+    app.browserDetect.init();
+    app.populateBrowser();
+  });
+
+</script>
+
+{{ content }}

@@ -18,8 +18,9 @@ var app = {
   },
 
   timeoutRedirectToEnglish: function(){
+    var self = this;
     setTimeout(function(){
-      window.location.replace("/en-US/?referer=" + this.getReferer() );
+      window.location.replace("/en-US/?referer=" + self.getReferer() );
     }, 5 * 1000);
   },
 
