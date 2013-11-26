@@ -1,2 +1,1 @@
-old-browser.org
-===============
+# [old-browser.org](http://old-browser.org)
