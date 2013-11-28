@@ -14,7 +14,11 @@ var app = {
   },
 
   getLanguage: function(){
-    return window.navigator.userLanguage || window.navigator.language;
+    var locale = window.navigator.userLanguage || window.navigator.language;
+    if(locale != null){
+      locale = locale.toLowerCase();
+    }
+    return locale;
   },
 
   timeoutRedirectToEnglish: function(){
