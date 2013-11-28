@@ -5,13 +5,13 @@ layout: default
 <p></p>
 <div class="panel panel-info">
   <div class="panel-heading">We are sorry, but we have not translated this site into your language yet.</div>
-  <div class="panel-body">You will be redirected to the <a href="/en-US/">US English Version of this site</a> in 5 seconds</div>
+  <div class="panel-body">You will be redirected to the <a id="nearestLanguage" href="/en-us/">nearest language</a> in 5 seconds</div>
 </div>
 
 <script type="text/javascript">
 
   $( document ).ready(function() {
-    app.timeoutRedirectToEnglish();
+    app.languageNotFoundRedirect();
   });
   
 </script>

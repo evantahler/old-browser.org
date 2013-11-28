@@ -1,5 +1,10 @@
 var app = {
 
+  defaultLocales: {
+    '*' : 'en-us',
+    'en': 'en-us',
+  },
+
   populateReferer: function(){
     $('.referer').html( this.getReferer() );
   },
@@ -21,10 +26,19 @@ var app = {
     return locale;
   },
 
-  timeoutRedirectToEnglish: function(){
+  languageNotFoundRedirect: function(){
     var self = this;
+
+    var locale = self.getLanguage();
+    var majorLoacle = locale.split("-")[0];
+    var destinationLocale = self.defaultLocales["*"];
+    if(self.defaultLocales[majorLoacle] != null){
+      destinationLocale = self.defaultLocales[majorLoacle];
+    }
+    $('#nearestLanguage').attr("href", "/" + destinationLocale + "/?referer=" + this.getReferer());
+
     setTimeout(function(){
-      window.location.replace("/en-US/?referer=" + self.getReferer() );
+      window.location.replace("/" + destinationLocale + "/?referer=" + self.getReferer() );
     }, 5 * 1000);
   },
 
