@@ -3,6 +3,7 @@ var app = {
   defaultLocales: {
     '*' : 'en-us',
     'en': 'en-us',
+    'es': 'es-us',
   },
 
   populateReferer: function(){
