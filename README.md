@@ -16,7 +16,7 @@ OldBrowser.org is a static site hosted by [GitHub pages](http://pages.github.com
 - [git](http://git-scm.com/) clone this project
 - [install](http://gembundler.com/) bundler
 - install the gems this project needs with `bundle install`
-- run jekyll `jekyll serve --watch` which will run this site locally on port 4000.
+- run jekyll `(bundle exec) jekyll serve --watch` which will run this site locally on port 4000.
 - send your change in a [pull request](https://help.github.com/articles/using-pull-requests/), and once they are merged, your changes will be up on the site!
 
 Thanks!
